@@ -1,0 +1,14 @@
+<div class="card border-light mb-3" style="max-width: 15rem";>
+    <img class="card-img-top img-product" src="/uploads/pictures/{{ product.pictureFilename ?? 'clothes2.jpg' }}" alt="image-produit">
+    <div class="card-body">
+        <div class="card-title h5">{{ product.nom }}</div>
+        <p class="card-text" style="max-width: 20rem";>{{ product.description }}</p>
+        <p class="card-text text-secondary"><b>Prix : {{ product.prixHt|number_format(2, ',', '.') }} €</b></p>
+        {% if product.promo %}
+            <div class="badge bg-warning">Promo !</div><br>
+        {% endif %}
+        {% for c in product.categories %}
+            <em class="text-muted text-primary text-italic">#{{ c.name }}</em>
+        {% endfor %}
+    </div>
+</div>

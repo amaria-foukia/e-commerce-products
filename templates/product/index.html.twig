@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+
+    <section>
+        {{ render(controller('App\\Controller\\ProductController:addProduct')) }}
+
+        <div class="jumbotron background-img bg-light">
+            <div class="container">
+                <p></p>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between">
+
+            <div class="filter">
+                {% include 'partials/_filter.html.twig' %}
+            </div>
+
+            <div class="d-flex justify-content-around flex-wrap flex-grow-1">
+                {% for product in products %}
+                    {% include 'partials/_product.html.twig' %}
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <div class="justify-content-center pagination">
+            {{ knp_pagination_render(products) }}
+        </div>
+    </section>
+
+{% endblock %}

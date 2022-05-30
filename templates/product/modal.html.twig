@@ -1,0 +1,28 @@
+<!-- Button trigger modal est dans le header -->
+
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            {% set url = path('product_add') %}
+            {{ form_start(form, {'action': url} ) }}
+            <div class="modal-header">
+                <h5 class="modal-title" id="addModal">Ajouter un produit</h5>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+            <div class="modal-body">
+
+                {{ form_row(form.nom, { 'label': 'Nom du produit' }) }}
+                {{ form_row(form.picture, { 'label': 'Image du produit' }) }}
+                {{ form_row(form.description, { 'label': 'Description' }) }}
+                {{ form_row(form.prixHt, { 'label': 'Prix HT' }) }}
+                {{ form_row(form.categories, { 'label': 'Catégories' }) }}
+                {{ form_row(form.promo, { 'label': 'Produit en promotion' }) }}
+
+                <button type="submit" href="{{ path('product_add')}}" class="btn btn-primary"> Enregistrer </button>
+
+            </div>
+            {{form_end(form)}}
+        </div>
+    </div>
+</div>

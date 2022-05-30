@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+    <div class="">
+        {{ form_row(form.q) }}
+    </div>
+    <div class="">
+        {{ form_row(form.categories, { 'label': 'catégorie(s) du produit' }) }}
+    </div>
+    <div class="">
+        {{ form_row(form.promo, { 'label': 'Articles en promotion'} ) }}
+    </div>
+    <div class="">
+        <button class="btn btn-info btn-sm w-100">Rechercher</button>
+    </div>
+{{ form_end(form) }}
