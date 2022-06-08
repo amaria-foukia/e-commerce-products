@@ -1,35 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductController!{% endblock %}
+{% block title %}Ma Boutique - Mes Produits{% endblock %}
 
 {% block body %}
 
-    <section>
         {{ render(controller('App\\Controller\\ProductController:addProduct')) }}
 
-        <div class="jumbotron background-img bg-light">
-            <div class="container">
-                <p></p>
-            </div>
-        </div>
+    <div class="p-3 js-filter">
 
-        <div class="d-flex justify-content-between">
+            <div class="jumbotron d-flex justify-content-between align-items-end bg-light p-3">
+                <h1>Ma Boutique !</h1>
 
-            <div class="filter">
-                {% include 'partials/_filter.html.twig' %}
+                <div class="d-flex justify-content-end js-filter-sorting">
+                    {% include 'product/_sorting.html.twig' %}
+                </div>
             </div>
 
-            <div class="d-flex justify-content-around flex-wrap flex-grow-1">
-                {% for product in products %}
-                    {% include 'partials/_product.html.twig' %}
-                {% endfor %}
+            <div class="d-flex justify-content-between mt-5">
+                <div class="filter-col">
+                    {% include 'partials/_filter.html.twig' %}
+                </div>
+
+                <div class="d-flex justify-content-around flex-wrap flex-grow-1 js-filter-content">
+                    {% include 'product/_products.html.twig' %}
+                </div>
+
             </div>
 
+            <div class="justify-content-center pagination pagination-sm js-filter-pagination">
+                {% include 'product/_pagination.html.twig' %}
+            </div>
         </div>
-
-        <div class="justify-content-center pagination">
-            {{ knp_pagination_render(products) }}
-        </div>
-    </section>
 
 {% endblock %}

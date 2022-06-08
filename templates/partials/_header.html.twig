@@ -1,6 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-primary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Ma Boutique</a>
+    <div class="container-fluid align-items-center">
+        <a class="navbar-brand" href="#">
+            <h1 class="h4 m-auto">
+                <i class="fas fa-shopping-bag"></i>
+                <strong>MB</strong>
+            </h1>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <button type="button" href="{{ path('product_add') }}" class="btn btn-secondary mx-3" data-toggle="modal" data-target="#addModal">
+                    <button type="button" href="{{ path('product_add') }}" class="btn btn-secondary btn-group-sm mx-3" data-toggle="modal" data-target="#addModal">
                         <i class="fas fa-plus"></i> Ajouter un produit
                     </button>
                 </li>

@@ -47,6 +47,7 @@ class ProductRepository extends ServiceEntityRepository
 
     /**
      * Récupère les produits en lien avec une recherche
+     * @param Search|null $search
      * @return PaginationInterface
      */
     public function findSearch(?Search  $search): PaginationInterface
@@ -77,7 +78,7 @@ class ProductRepository extends ServiceEntityRepository
         $query = $query->getQuery();
         return $this->paginator->paginate(
             $query,
-            1,
+            $search->page,
             4
         );
     }
